@@ -19,7 +19,10 @@ searchInput.addEventListener('blur',function(){
 
 
 const badgeEl = document.querySelector('header .badges');
+const toTopEl = document.querySelector('#to-top');
 
+
+// 스크롤이 지나치게 자주 발생하는 것을 조절(throttle, 일부러 부하를 줌)
 window.addEventListener('scroll', _.throttle(function(){
     console.log(window.scrollY);
     if (window.scrollY > 500) {
@@ -29,12 +32,18 @@ window.addEventListener('scroll', _.throttle(function(){
             display:'none'
             // 투명도만 0으로 낮추면 사라진 것이 아니라 영역이 잡히기 때문에 none 처리 해준다.
         });
+        gsap.to(toTopEl, .2, {
+            x:0
+        })
     }
     else {
         // show badge
         gsap.to(badgeEl, .6, {
             opacity:1,
             display:'block'
+        });
+        gsap.to(toTopEl, .2, {
+            x:100
         })
     }
 }),300);
@@ -42,6 +51,13 @@ window.addEventListener('scroll', _.throttle(function(){
 // gsap.to(요소, 지속시간, 옵션);
 // _.throttle(함수, 시간);
 
+
+toTopEl.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'})
+    // gsap.to(window, .7, {
+    //     scrollTo:0
+    // })
+ }) 
 
 const fadeEls = document.querySelectorAll('.visual .fade-in');
 fadeEls.forEach(function(el, idx){
@@ -78,6 +94,16 @@ new Swiper('.promotion .swiper-container', {
     }
 });
 
+
+new Swiper('.awards .swiper-container', {
+    slidesPerView:5,
+    loop:true,
+    navigation : {
+        prevEl : '.awards .swiper-prev',
+        nextEl : '.awards .swiper-next',
+    }
+});
+
 // PROMOTION AREA
 const promotionEl           = document.querySelector('.promotion');
 const promotionToggleBtn    = document.querySelector('.toggle-promotion');
@@ -94,3 +120,26 @@ promotionToggleBtn.addEventListener('click', function(){
     }
 
 });
+
+function random(min,max) {
+    // .toFixed()를 통해 반환된 문자 데이터를,
+    // parseFloat 를 통해 소수점을 가지는 숫자 데이터로 변환
+    return parseFloat((Math.random() * (max-min) + min).toFixed(2))
+}
+
+function floatingObject(selector, delay, size) {
+    gsap.to
+        (selector,
+         random(1.5, 2.5),{
+            y: size,
+            repeat:-1, //infinite
+            yoyo:true, // 재생<->역재생 반복
+            ease:Power1.easeInOut,
+            delay: random(0, delay)
+        });
+}
+floatingObject('.floating1',1, 15);
+floatingObject('.floating2',.5, 15);
+floatingObject('.floating3',1.5, 20);
+
+

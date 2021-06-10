@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>STARBUCKS COFFEE KOREA</title>
+    <title>스타벅스커피코리아</title>
 
     <meta property="og:type"              content="website" />
     <meta property="og:site_name"         content="Starbucks" />
@@ -23,8 +23,10 @@
     <link rel="stylesheet"                href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" />
     <link rel="stylesheet"                href="https://fonts.googleapis.com/icon?family=Material+Icons" /> 
     <link rel="stylesheet"                href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap"/>
+    <link rel="stylesheet"                href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet"                href="./css/main.css" />
 
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js" integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js" integrity="sha512-cdV6j5t5o24hkSciVrb8Ki6FveC2SgwGfLE31+ZQRHAeSRxYhAQskLkq3dLm8ZcWe1N3vBOEYmmbhzf7NTtFFQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script defer src="./js/main.js"></script>
@@ -385,8 +387,85 @@
         <div class="fade-in">
           <img src="./images/visual_spoon.png" alt="Spoon" class="spoon" />
         </div>
-
       </div>
+    </section>
+    <!-- MAIN VISUAL END -->
+
+    <!-- NOTICE -->
+    <section class="notice">
+      <div class="notice-line">
+        <div class="bg-left"></div>
+        <div class="bg-right"></div>
+        <div class="inner">
+
+          <div class="inner__left">
+            <h2>공지사항</h2>
+            <div class="swiper-container">
+              <ul class="swiper-wrapper">
+                <li class="swiper-slide">
+                  <a href="javascript:void(0)">크리스마스 & 연말연시 스타벅스 매장 영업시간 안내</a>
+                </li>
+                <li class="swiper-slide">
+                  <a href="javascript:void(0)">[당첨자 발표] 2021 스타벅스 플래너 영수증 이벤트</a>
+                </li>
+                <li class="swiper-slide">
+                  <a href="javascript:void(0)">스타벅스 코리아 앱 버전 업데이트</a>
+                </li>
+                <li class="swiper-slide">
+                  <a href="javascript:void(0)">[당첨자 발표] 뉴이어 전자영수증 이벤트</a>
+                </li>
+              </ul>
+            </div>
+            <a href="javacsript:void(0);" class="notice-line__more">
+              <div class="material-icons">add_circle</div>
+            </a>
+          </div>
+          <div class="inner__right">
+            <h2>스타벅스 프로모션</h2>
+            <div class="toggle-promotion">
+              <div class="material-icons">upload</div>
+            </div>
+          </div> 
+        </div>
+      </div>
+      <div class="promotion">
+          <div class="swiper-container">
+            <ul class="swiper-wrapper">
+              <li class="swiper-slide">
+                <img src="./images/promotion_slide1.jpg" alt="2021 뉴 이어 뭐시기" />
+                <a href="javascript:void(0)" class="btn">자세히 보기</a>
+              </li>
+              <li class="swiper-slide">
+                <img src="./images/promotion_slide2.jpg" alt="기간 내 스타벅스 3만원 사용시 아메리카노 e-쿠폰" />
+                <a href="javascript:void(0)" class="btn">자세히 보기</a>
+              </li>
+              <li class="swiper-slide">
+                <img src="./images/promotion_slide3.jpg" alt="2021 뉴 이어 뭐시기" />
+                <a href="javascript:void(0)" class="btn">자세히 보기</a>
+              </li>
+              <li class="swiper-slide">
+                <img src="./images/promotion_slide4.jpg" alt="2021 뉴 이어 뭐시기" />
+                <a href="javascript:void(0)" class="btn">자세히 보기</a>
+              </li>
+              <li class="swiper-slide">
+                <img src="./images/promotion_slide5.jpg" alt="2021 뉴 이어 뭐시기" />
+                <a href="javascript:void(0)" class="btn">자세히 보기</a>
+              </li>
+            </ul> 
+          </div>
+          <!-- END swiper container-->
+          <div class="swiper-pagination"></div>
+            <div class="swiper-prev">
+              <p class="material-icons">
+                arrow_back
+              </p>
+            </div>
+            <div class="swiper-next">
+              <p class="material-icons">
+                arrow_forward
+              </p>
+            </div>
+        </div>
     </section>
 
   

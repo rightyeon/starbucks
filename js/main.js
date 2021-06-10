@@ -32,7 +32,7 @@ window.addEventListener('scroll', _.throttle(function(){
             display:'none'
             // 투명도만 0으로 낮추면 사라진 것이 아니라 영역이 잡히기 때문에 none 처리 해준다.
         });
-        gsap.to(toTopEl, .2, {
+        gsap.to('toTopEl', .2, {
             x:0
         })
     }
@@ -42,7 +42,7 @@ window.addEventListener('scroll', _.throttle(function(){
             opacity:1,
             display:'block'
         });
-        gsap.to(toTopEl, .2, {
+        gsap.to('toTopEl', .2, {
             x:100
         })
     }
@@ -53,10 +53,10 @@ window.addEventListener('scroll', _.throttle(function(){
 
 
 toTopEl.addEventListener('click', function(){
-    window.scrollTo({top:0, behavior:'smooth'})
-    // gsap.to(window, .7, {
-    //     scrollTo:0
-    // })
+    // window.scrollTo({top:0, behavior:'smooth'})
+    gsap.to(window, .7, {
+        scrollTo:0
+    })
  }) 
 
 const fadeEls = document.querySelectorAll('.visual .fade-in');
@@ -142,4 +142,9 @@ floatingObject('.floating1',1, 15);
 floatingObject('.floating2',.5, 15);
 floatingObject('.floating3',1.5, 20);
 
+
+// FOOTER date
+
+const thisYear = document.querySelector('.this-year');
+thisYear.textContent = new Date().getFullYear();
 
